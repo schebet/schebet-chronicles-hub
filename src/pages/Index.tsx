@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { BlogGrid } from "@/components/BlogGrid";
@@ -6,12 +7,14 @@ import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
 
 const Index = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("Sve");
+
   return (
     <div className="min-h-screen">
-      <Navigation />
+      <Navigation selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
       <main>
         <Hero />
-        <BlogGrid />
+        <BlogGrid selectedCategory={selectedCategory} />
         <Gallery />
         <About />
       </main>
