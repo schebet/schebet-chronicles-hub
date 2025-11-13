@@ -13,7 +13,7 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation selectedCategory={selectedCategory} onCategoryChange={setSelectedCategory} />
       <main>
-        <Hero onCategorySelect={setSelectedCategory} />
+        <Hero />
         <BlogGrid selectedCategory={selectedCategory} />
         <Gallery />
         <About />
