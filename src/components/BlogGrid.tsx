@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, User, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const blogPosts = [
   {
@@ -95,10 +96,12 @@ export const BlogGrid = () => {
                   <User className="w-4 h-4" />
                   <span>{post.author}</span>
                 </div>
-                <Button variant="ghost" size="sm" className="hover:text-primary">
-                  Pročitaj više
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Button>
+                <Link to={`/blog/${post.id}`}>
+                  <Button variant="ghost" size="sm" className="hover:text-primary">
+                    Pročitaj više
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </Button>
+                </Link>
               </CardFooter>
             </Card>
           ))}
