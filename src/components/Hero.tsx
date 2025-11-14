@@ -66,14 +66,14 @@ export const Hero = ({ onCategorySelect }: { onCategorySelect?: (category: strin
                   Istražite priče
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-64 p-3 bg-background/10 backdrop-blur-md border-background/20">
+              <PopoverContent className="w-64 p-3 bg-background/5 backdrop-blur-md border-background/20">
                 <div className="flex flex-wrap gap-2">
                   {categories.map((category) => (
                     <Button
                       key={category}
                       variant="outline"
                       onClick={() => handleCategoryClick(category)}
-                      className="bg-background/10 backdrop-blur-sm border-foreground/20 text-foreground hover:bg-background/20 hover:border-foreground/30"
+                      className="bg-background/5 backdrop-blur-sm border-foreground/20 text-foreground hover:bg-background/10 hover:border-foreground/30"
                     >
                       {category}
                     </Button>
