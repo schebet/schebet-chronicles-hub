@@ -1,14 +1,6 @@
 import { useState } from "react";
-import { Menu, X, Moon, Sun, Facebook, Instagram, Mail, Github, ChevronDown } from "lucide-react";
+import { Menu, X, Moon, Sun, Facebook, Instagram, Mail, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-
-const categories = ["Sve", "Istorija", "Kultura", "Ljudi", "Priroda", "Gastronomija", "Arhitektura"];
 
 export const Navigation = ({ selectedCategory, onCategoryChange }: { 
   selectedCategory?: string; 
@@ -35,30 +27,9 @@ export const Navigation = ({ selectedCategory, onCategoryChange }: {
             <a href="#home" className="text-foreground hover:text-primary transition-colors">
               Početna
             </a>
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <Button variant="ghost" className="text-foreground hover:text-primary">
-                  {selectedCategory || "Blog"}
-                  <ChevronDown className="ml-2 w-4 h-4" />
-                </Button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="bg-card z-50">
-                {categories.map((category) => (
-                  <DropdownMenuItem
-                    key={category}
-                    onClick={() => {
-                      onCategoryChange?.(category);
-                      window.location.hash = "#blog";
-                    }}
-                    className={`cursor-pointer ${
-                      selectedCategory === category ? "bg-primary/10 text-primary font-medium" : ""
-                    }`}
-                  >
-                    {category}
-                  </DropdownMenuItem>
-                ))}
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <a href="#blog" className="text-foreground hover:text-primary transition-colors">
+              Blog
+            </a>
             <a href="#gallery" className="text-foreground hover:text-primary transition-colors">
               Galerija
             </a>
@@ -111,26 +82,9 @@ export const Navigation = ({ selectedCategory, onCategoryChange }: {
             <a href="#home" className="block text-foreground hover:text-primary transition-colors">
               Početna
             </a>
-            <div className="space-y-2">
-              <div className="text-foreground font-medium px-2">Blog kategorije:</div>
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => {
-                    onCategoryChange?.(category);
-                    window.location.hash = "#blog";
-                    setIsOpen(false);
-                  }}
-                  className={`block w-full text-left px-4 py-2 rounded-md transition-colors ${
-                    selectedCategory === category 
-                      ? "bg-primary/10 text-primary font-medium" 
-                      : "text-foreground hover:bg-muted"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+            <a href="#blog" onClick={() => setIsOpen(false)} className="block text-foreground hover:text-primary transition-colors">
+              Blog
+            </a>
             <a href="#gallery" className="block text-foreground hover:text-primary transition-colors">
               Galerija
             </a>
