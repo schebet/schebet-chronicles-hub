@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Moon, Sun, Facebook, Instagram, Mail, ChevronDown } from "lucide-react";
+import { Menu, X, Moon, Sun, Facebook, Instagram, Mail, Github, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
@@ -74,6 +74,10 @@ export const Navigation = ({ selectedCategory, onCategoryChange }: {
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
                  className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer"
+                 className="text-muted-foreground hover:text-primary transition-colors">
+                <Github className="w-5 h-5" />
               </a>
               <a href="mailto:info@seloSebet.com"
                  className="text-muted-foreground hover:text-primary transition-colors">
