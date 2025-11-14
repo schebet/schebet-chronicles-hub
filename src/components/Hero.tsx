@@ -9,12 +9,12 @@ import {
 } from "@/components/ui/popover";
 
 const categories = [
-  { name: "Istorija", color: "bg-amber-500 hover:bg-amber-600" },
-  { name: "Kultura", color: "bg-purple-500 hover:bg-purple-600" },
-  { name: "Ljudi", color: "bg-blue-500 hover:bg-blue-600" },
-  { name: "Priroda", color: "bg-green-500 hover:bg-green-600" },
-  { name: "Gastronomija", color: "bg-orange-500 hover:bg-orange-600" },
-  { name: "Arhitektura", color: "bg-red-500 hover:bg-red-600" },
+  "Istorija",
+  "Kultura",
+  "Ljudi",
+  "Priroda",
+  "Gastronomija",
+  "Arhitektura",
 ];
 
 export const Hero = ({ onCategorySelect }: { onCategorySelect?: (category: string) => void }) => {
@@ -66,15 +66,16 @@ export const Hero = ({ onCategorySelect }: { onCategorySelect?: (category: strin
                   Istražite priče
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-64 p-2">
-                <div className="grid gap-2">
+              <PopoverContent className="w-64 p-3">
+                <div className="flex flex-wrap gap-2">
                   {categories.map((category) => (
                     <Button
-                      key={category.name}
-                      onClick={() => handleCategoryClick(category.name)}
-                      className={`${category.color} text-white w-full justify-start`}
+                      key={category}
+                      variant="outline"
+                      onClick={() => handleCategoryClick(category)}
+                      className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground"
                     >
-                      {category.name}
+                      {category}
                     </Button>
                   ))}
                 </div>
