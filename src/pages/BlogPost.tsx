@@ -27,6 +27,72 @@ const blogPostsData = [
       <p>Danas, Šebet predstavlja spoj tradicionalnog seoskog života i modernih pogodnosti, čuvajući svoje nasleđe dok gleda ka budućnosti.</p>
     `,
   },
+    {
+    id: 1,
+    title: "Istorija sela kroz vekove",
+    excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
+    author: "Marko Petrović",
+    date: "15. januar 2025",
+    category: "Istorija",
+    content: `
+      <h2>Početak naselja</h2>
+      <p>Selo Šebet ima bogatu istoriju koja seže nekoliko vekova unazad. Prvi pisani tragovi o selu datiraju iz 15. veka, kada je ovo područje bilo deo većeg feudalnog poseda.</p>
+      
+      <h2>Razvoj kroz vekove</h2>
+      <p>Tokom 18. i 19. veka, selo je doživelo značajan razvoj. Građene su prve škole, crkve i javne zgrade koje su postale centar društvenog života zajednice.</p>
+      
+      <p>Stanovništvo se bavilo uglavnom poljoprivredom, stočarstvom i tradicionalnim zanatima. Mnoge od ovih tradicija su očuvane i dan danas.</p>
+      
+      <h2>Moderne prilike</h2>
+      <p>U 20. veku, selo je prošlo kroz modernizaciju infrastrukture. Elektrifikacija, putevi i vodosnabdevanje su značajno poboljšali kvalitet života stanovnika.</p>
+      
+      <p>Danas, Šebet predstavlja spoj tradicionalnog seoskog života i modernih pogodnosti, čuvajući svoje nasleđe dok gleda ka budućnosti.</p>
+    `,
+  },
+    {
+    id: 1,
+    title: "Istorija sela kroz vekove",
+    excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
+    author: "Marko Petrović",
+    date: "15. januar 2025",
+    category: "Istorija",
+    content: `
+      <h2>Početak naselja</h2>
+      <p>Selo Šebet ima bogatu istoriju koja seže nekoliko vekova unazad. Prvi pisani tragovi o selu datiraju iz 15. veka, kada je ovo područje bilo deo većeg feudalnog poseda.</p>
+      
+      <h2>Razvoj kroz vekove</h2>
+      <p>Tokom 18. i 19. veka, selo je doživelo značajan razvoj. Građene su prve škole, crkve i javne zgrade koje su postale centar društvenog života zajednice.</p>
+      
+      <p>Stanovništvo se bavilo uglavnom poljoprivredom, stočarstvom i tradicionalnim zanatima. Mnoge od ovih tradicija su očuvane i dan danas.</p>
+      
+      <h2>Moderne prilike</h2>
+      <p>U 20. veku, selo je prošlo kroz modernizaciju infrastrukture. Elektrifikacija, putevi i vodosnabdevanje su značajno poboljšali kvalitet života stanovnika.</p>
+      
+      <p>Danas, Šebet predstavlja spoj tradicionalnog seoskog života i modernih pogodnosti, čuvajući svoje nasleđe dok gleda ka budućnosti.</p>
+    `,
+  },
+    {
+    id: 1,
+    title: "Istorija sela kroz vekove",
+    excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
+    author: "Marko Petrović",
+    date: "15. januar 2025",
+    category: "Istorija",
+    content: `
+      <h2>Početak naselja</h2>
+      <p>Selo Šebet ima bogatu istoriju koja seže nekoliko vekova unazad. Prvi pisani tragovi o selu datiraju iz 15. veka, kada je ovo područje bilo deo većeg feudalnog poseda.</p>
+      
+      <h2>Razvoj kroz vekove</h2>
+      <p>Tokom 18. i 19. veka, selo je doživelo značajan razvoj. Građene su prve škole, crkve i javne zgrade koje su postale centar društvenog života zajednice.</p>
+      
+      <p>Stanovništvo se bavilo uglavnom poljoprivredom, stočarstvom i tradicionalnim zanatima. Mnoge od ovih tradicija su očuvane i dan danas.</p>
+      
+      <h2>Moderne prilike</h2>
+      <p>U 20. veku, selo je prošlo kroz modernizaciju infrastrukture. Elektrifikacija, putevi i vodosnabdevanje su značajno poboljšali kvalitet života stanovnika.</p>
+      
+      <p>Danas, Šebet predstavlja spoj tradicionalnog seoskog života i modernih pogodnosti, čuvajući svoje nasleđe dok gleda ka budućnosti.</p>
+    `,
+  },
   {
     id: 2,
     title: "Tradicionalne svečanosti",
