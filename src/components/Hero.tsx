@@ -56,7 +56,7 @@ export const Hero = ({ onCategorySelect }: { onCategorySelect?: (category: strin
           <p className="text-xl md:text-2xl text-foreground mb-8 max-w-2xl mx-auto">
             Dokumentarni sajt o selu — istorija, kultura, ljudi i priče našeg sela
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col gap-4 items-center justify-center">
             <Popover open={open} onOpenChange={setOpen}>
               <PopoverTrigger asChild>
                 <Button 
