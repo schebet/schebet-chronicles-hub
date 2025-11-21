@@ -106,7 +106,7 @@ export const BlogGrid = ({ selectedCategory }: { selectedCategory?: string }) =>
                   <span>{post.author}</span>
                 </div>
                 <Link to={`/blog/${post.id}`}>
-                  <Button variant="ghost" size="sm" className="hover:text-primary">
+                  <Button variant="ghost" size="sm" className="bg-muted text-primary hover:bg-muted/80 hover:text-primary">
                     Pročitaj više
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
