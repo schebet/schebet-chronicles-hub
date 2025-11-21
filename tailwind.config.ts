@@ -63,6 +63,14 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        category: {
+          history: "hsl(var(--category-history))",
+          culture: "hsl(var(--category-culture))",
+          people: "hsl(var(--category-people))",
+          nature: "hsl(var(--category-nature))",
+          gastronomy: "hsl(var(--category-gastronomy))",
+          architecture: "hsl(var(--category-architecture))",
+        },
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',

@@ -1,7 +1,21 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+
+const getCategoryColor = (category: string) => {
+  const colors: Record<string, string> = {
+    "Istorija": "bg-category-history/10 text-category-history border-category-history/20",
+    "Kultura": "bg-category-culture/10 text-category-culture border-category-culture/20",
+    "Ljudi": "bg-category-people/10 text-category-people border-category-people/20",
+    "Priroda": "bg-category-nature/10 text-category-nature border-category-nature/20",
+    "Gastronomija": "bg-category-gastronomy/10 text-category-gastronomy border-category-gastronomy/20",
+    "Arhitektura": "bg-category-architecture/10 text-category-architecture border-category-architecture/20",
+  };
+  return colors[category] || "bg-primary/10 text-primary border-primary/20";
+};
 
 const blogPosts = [
   {
@@ -11,6 +25,7 @@ const blogPosts = [
     author: "Marko Petrović",
     date: "15. januar 2025",
     category: "Istorija",
+    imageUrl: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?w=800&q=80",
   },
   {
     id: 2,
@@ -19,6 +34,7 @@ const blogPosts = [
     author: "Ana Jovanović",
     date: "10. januar 2025",
     category: "Kultura",
+    imageUrl: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
   },
   {
     id: 3,
@@ -27,6 +43,7 @@ const blogPosts = [
     author: "Stefan Nikolić",
     date: "5. januar 2025",
     category: "Ljudi",
+    imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
   },
   {
     id: 4,
@@ -35,6 +52,7 @@ const blogPosts = [
     author: "Jelena Đorđević",
     date: "1. januar 2025",
     category: "Priroda",
+    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
   },
   {
     id: 5,
@@ -43,6 +61,7 @@ const blogPosts = [
     author: "Milica Todorović",
     date: "28. decembar 2024",
     category: "Gastronomija",
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
   },
   {
     id: 6,
@@ -51,6 +70,7 @@ const blogPosts = [
     author: "Nikola Stanković",
     date: "20. decembar 2024",
     category: "Arhitektura",
+    imageUrl: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80",
   },
 ];
 
@@ -80,16 +100,23 @@ export const BlogGrid = ({ selectedCategory }: { selectedCategory?: string }) =>
             {filteredPosts.map((post, index) => (
             <Card
               key={post.id}
-              className="card-hover bg-gradient-card border-border/50"
+              className="flex flex-col overflow-hidden card-hover bg-gradient-card border-border/50"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
+              <AspectRatio ratio={16 / 9} className="overflow-hidden">
+                <img
+                  src={post.imageUrl}
+                  alt={post.title}
+                  className="object-cover w-full h-full transition-transform duration-300 hover:scale-110"
+                />
+              </AspectRatio>
               <CardHeader>
                 <div className="flex items-center gap-2 text-sm text-muted-foreground mb-2">
                   <Calendar className="w-4 h-4" />
                   <span>{post.date}</span>
-                </div>
-                <div className="inline-block px-3 py-1 bg-primary/10 text-primary rounded-full text-sm mb-3">
-                  {post.category}
+                  <Badge variant="outline" className={`ml-auto border ${getCategoryColor(post.category)}`}>
+                    {post.category}
+                  </Badge>
                 </div>
                 <CardTitle className="text-2xl hover:text-primary transition-colors">
                   {post.title}
