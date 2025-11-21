@@ -1,8 +1,32 @@
 import { useParams, Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { BackToTop } from "@/components/BackToTop";
 import { Button } from "@/components/ui/button";
-import { Calendar, User, ArrowLeft, Tag } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { AspectRatio } from "@/components/ui/aspect-ratio";
+import {
+  Breadcrumb,
+  BreadcrumbItem,
+  BreadcrumbLink,
+  BreadcrumbList,
+  BreadcrumbPage,
+  BreadcrumbSeparator,
+} from "@/components/ui/breadcrumb";
+import { Calendar, User, ArrowLeft, Tag, ArrowRight, Home } from "lucide-react";
+
+const getCategoryColor = (category: string) => {
+  const colors: Record<string, string> = {
+    "Istorija": "bg-category-history/10 text-category-history border-category-history/20",
+    "Kultura": "bg-category-culture/10 text-category-culture border-category-culture/20",
+    "Ljudi": "bg-category-people/10 text-category-people border-category-people/20",
+    "Priroda": "bg-category-nature/10 text-category-nature border-category-nature/20",
+    "Gastronomija": "bg-category-gastronomy/10 text-category-gastronomy border-category-gastronomy/20",
+    "Arhitektura": "bg-category-architecture/10 text-category-architecture border-category-architecture/20",
+  };
+  return colors[category] || "bg-primary/10 text-primary border-primary/20";
+};
 
 const blogPostsData = [
   {
@@ -12,72 +36,7 @@ const blogPostsData = [
     author: "Marko Petrović",
     date: "15. januar 2025",
     category: "Istorija",
-    content: `
-      <h2>Početak naselja</h2>
-      <p>Selo Šebet ima bogatu istoriju koja seže nekoliko vekova unazad. Prvi pisani tragovi o selu datiraju iz 15. veka, kada je ovo područje bilo deo većeg feudalnog poseda.</p>
-      
-      <h2>Razvoj kroz vekove</h2>
-      <p>Tokom 18. i 19. veka, selo je doživelo značajan razvoj. Građene su prve škole, crkve i javne zgrade koje su postale centar društvenog života zajednice.</p>
-      
-      <p>Stanovništvo se bavilo uglavnom poljoprivredom, stočarstvom i tradicionalnim zanatima. Mnoge od ovih tradicija su očuvane i dan danas.</p>
-      
-      <h2>Moderne prilike</h2>
-      <p>U 20. veku, selo je prošlo kroz modernizaciju infrastrukture. Elektrifikacija, putevi i vodosnabdevanje su značajno poboljšali kvalitet života stanovnika.</p>
-      
-      <p>Danas, Šebet predstavlja spoj tradicionalnog seoskog života i modernih pogodnosti, čuvajući svoje nasleđe dok gleda ka budućnosti.</p>
-    `,
-  },
-    {
-    id: 1,
-    title: "Istorija sela kroz vekove",
-    excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
-    author: "Marko Petrović",
-    date: "15. januar 2025",
-    category: "Istorija",
-    content: `
-      <h2>Početak naselja</h2>
-      <p>Selo Šebet ima bogatu istoriju koja seže nekoliko vekova unazad. Prvi pisani tragovi o selu datiraju iz 15. veka, kada je ovo područje bilo deo većeg feudalnog poseda.</p>
-      
-      <h2>Razvoj kroz vekove</h2>
-      <p>Tokom 18. i 19. veka, selo je doživelo značajan razvoj. Građene su prve škole, crkve i javne zgrade koje su postale centar društvenog života zajednice.</p>
-      
-      <p>Stanovništvo se bavilo uglavnom poljoprivredom, stočarstvom i tradicionalnim zanatima. Mnoge od ovih tradicija su očuvane i dan danas.</p>
-      
-      <h2>Moderne prilike</h2>
-      <p>U 20. veku, selo je prošlo kroz modernizaciju infrastrukture. Elektrifikacija, putevi i vodosnabdevanje su značajno poboljšali kvalitet života stanovnika.</p>
-      
-      <p>Danas, Šebet predstavlja spoj tradicionalnog seoskog života i modernih pogodnosti, čuvajući svoje nasleđe dok gleda ka budućnosti.</p>
-    `,
-  },
-    {
-    id: 1,
-    title: "Istorija sela kroz vekove",
-    excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
-    author: "Marko Petrović",
-    date: "15. januar 2025",
-    category: "Istorija",
-    content: `
-      <h2>Početak naselja</h2>
-      <p>Selo Šebet ima bogatu istoriju koja seže nekoliko vekova unazad. Prvi pisani tragovi o selu datiraju iz 15. veka, kada je ovo područje bilo deo većeg feudalnog poseda.</p>
-      
-      <h2>Razvoj kroz vekove</h2>
-      <p>Tokom 18. i 19. veka, selo je doživelo značajan razvoj. Građene su prve škole, crkve i javne zgrade koje su postale centar društvenog života zajednice.</p>
-      
-      <p>Stanovništvo se bavilo uglavnom poljoprivredom, stočarstvom i tradicionalnim zanatima. Mnoge od ovih tradicija su očuvane i dan danas.</p>
-      
-      <h2>Moderne prilike</h2>
-      <p>U 20. veku, selo je prošlo kroz modernizaciju infrastrukture. Elektrifikacija, putevi i vodosnabdevanje su značajno poboljšali kvalitet života stanovnika.</p>
-      
-      <p>Danas, Šebet predstavlja spoj tradicionalnog seoskog života i modernih pogodnosti, čuvajući svoje nasleđe dok gleda ka budućnosti.</p>
-    `,
-  },
-    {
-    id: 1,
-    title: "Istorija sela kroz vekove",
-    excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
-    author: "Marko Petrović",
-    date: "15. januar 2025",
-    category: "Istorija",
+    imageUrl: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?w=1200&q=80",
     content: `
       <h2>Početak naselja</h2>
       <p>Selo Šebet ima bogatu istoriju koja seže nekoliko vekova unazad. Prvi pisani tragovi o selu datiraju iz 15. veka, kada je ovo područje bilo deo većeg feudalnog poseda.</p>
@@ -100,6 +59,7 @@ const blogPostsData = [
     author: "Ana Jovanović",
     date: "10. januar 2025",
     category: "Kultura",
+    imageUrl: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=1200&q=80",
     content: `
       <h2>Godišnji običaji</h2>
       <p>Selo Šebet neguje bogatu tradiciju kulturnih i verskih praznika koji se slave tokom cele godine. Ove svečanosti okupljaju zajednicu i prenose tradiciju sa kolena na koleno.</p>
@@ -120,6 +80,7 @@ const blogPostsData = [
     author: "Stefan Nikolić",
     date: "5. januar 2025",
     category: "Ljudi",
+    imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80",
     content: `
       <h2>Seoska zajednica</h2>
       <p>Srce svakog sela su njegovi ljudi. U Šebetu živi zajednica koja čuva tradiciju, ali i gradi budućnost kroz svoje svakodnevne aktivnosti i doprinos.</p>
@@ -140,6 +101,7 @@ const blogPostsData = [
     author: "Jelena Đorđević",
     date: "1. januar 2025",
     category: "Priroda",
+    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80",
     content: `
       <h2>Geografski položaj</h2>
       <p>Selo Šebet se nalazi u podnožju planinskog masiva, okruženo šumama i livadama. Ovaj prirodni ambijent pruža neverovatne mogućnosti za aktivnosti na otvorenom.</p>
@@ -161,6 +123,7 @@ const blogPostsData = [
     author: "Milica Todorović",
     date: "28. decembar 2024",
     category: "Gastronomija",
+    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=80",
     content: `
       <h2>Tradicionalna kuhinja</h2>
       <p>Gastronomija Šebeta je rezultat vekova kulinarskog nasleđa. Recepti se prenose sa kolena na koleno, čuvajući autentične ukuse i tehnike pripreme.</p>
@@ -182,6 +145,7 @@ const blogPostsData = [
     author: "Nikola Stanković",
     date: "20. decembar 2024",
     category: "Arhitektura",
+    imageUrl: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=1200&q=80",
     content: `
       <h2>Tradicionalna gradnja</h2>
       <p>Arhitektura Šebeta odražava tradicionalni stil gradnje karakterističan za ovaj region. Stare kuće su građene od prirodnih materijala - kamena, drveta i ćerpiča.</p>
@@ -201,6 +165,15 @@ const blogPostsData = [
 const BlogPost = () => {
   const { id } = useParams();
   const post = blogPostsData.find((p) => p.id === Number(id));
+
+  const getRelatedPosts = () => {
+    if (!post) return [];
+    return blogPostsData
+      .filter((p) => p.category === post.category && p.id !== post.id)
+      .slice(0, 3);
+  };
+
+  const relatedPosts = getRelatedPosts();
 
   if (!post) {
     return (
@@ -227,12 +200,34 @@ const BlogPost = () => {
       <Navigation />
       <main className="flex-1">
         <article className="container mx-auto px-4 py-12 max-w-4xl">
-          <Link to="/#blog">
-            <Button variant="ghost" className="mb-8">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Nazad na blog
-            </Button>
-          </Link>
+          <Breadcrumb className="mb-8">
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/" className="flex items-center gap-1">
+                    <Home className="w-4 h-4" />
+                    Početna
+                  </Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/#blog">Blog</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <Link to="/#blog">{post.category}</Link>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{post.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
 
           <div className="mb-8 animate-fade-in-up">
             <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-4">
@@ -246,9 +241,9 @@ const BlogPost = () => {
               </div>
               <div className="flex items-center gap-2">
                 <Tag className="w-4 h-4" />
-                <span className="px-3 py-1 bg-primary/10 text-primary rounded-full">
+                <Badge variant="outline" className={`border ${getCategoryColor(post.category)}`}>
                   {post.category}
-                </span>
+                </Badge>
               </div>
             </div>
 
@@ -256,9 +251,17 @@ const BlogPost = () => {
               {post.title}
             </h1>
 
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-8">
               {post.excerpt}
             </p>
+
+            <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-lg mb-8">
+              <img
+                src={post.imageUrl}
+                alt={post.title}
+                className="object-cover w-full h-full"
+              />
+            </AspectRatio>
           </div>
 
           <div 
@@ -266,6 +269,42 @@ const BlogPost = () => {
             style={{ animationDelay: "0.1s" }}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+
+          {relatedPosts.length > 0 && (
+            <div className="mt-16 pt-8 border-t border-border">
+              <h2 className="text-3xl font-bold mb-8 text-gradient-primary">Srodni članci</h2>
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {relatedPosts.map((relatedPost) => (
+                  <Card key={relatedPost.id} className="flex flex-col overflow-hidden hover-scale">
+                    <AspectRatio ratio={16 / 9} className="overflow-hidden">
+                      <img
+                        src={relatedPost.imageUrl}
+                        alt={relatedPost.title}
+                        className="object-cover w-full h-full transition-transform duration-300 hover:scale-110"
+                      />
+                    </AspectRatio>
+                    <CardHeader>
+                      <Badge variant="outline" className={`w-fit mb-2 border ${getCategoryColor(relatedPost.category)}`}>
+                        {relatedPost.category}
+                      </Badge>
+                      <CardTitle className="text-xl line-clamp-2">{relatedPost.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-1">
+                      <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                        {relatedPost.excerpt}
+                      </p>
+                      <Link to={`/blog/${relatedPost.id}`}>
+                        <Button variant="ghost" size="sm" className="w-full">
+                          Pročitaj više
+                          <ArrowRight className="w-4 h-4 ml-2" />
+                        </Button>
+                      </Link>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            </div>
+          )}
 
           <div className="mt-12 pt-8 border-t border-border">
             <Link to="/#blog">
@@ -277,6 +316,7 @@ const BlogPost = () => {
           </div>
         </article>
       </main>
+      <BackToTop />
       <Footer />
     </div>
   );

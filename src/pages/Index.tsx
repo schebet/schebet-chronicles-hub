@@ -5,6 +5,7 @@ import { BlogGrid } from "@/components/BlogGrid";
 import { Gallery } from "@/components/Gallery";
 import { About } from "@/components/About";
 import { Footer } from "@/components/Footer";
+import { BackToTop } from "@/components/BackToTop";
 
 const Index = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("Sve");
@@ -18,6 +19,7 @@ const Index = () => {
         <Gallery />
         <About />
       </main>
+      <BackToTop />
       <Footer />
     </div>
   );

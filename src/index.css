@@ -32,6 +32,13 @@ All colors MUST be HSL.
     --muted: 340 20% 95%;
     --muted-foreground: 340 25% 40%;
 
+    --category-history: 217 91% 60%;
+    --category-culture: 271 81% 56%;
+    --category-people: 142 71% 45%;
+    --category-nature: 159 61% 44%;
+    --category-gastronomy: 24 95% 53%;
+    --category-architecture: 38 92% 50%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
@@ -83,6 +90,13 @@ All colors MUST be HSL.
 
     --muted: 340 20% 18%;
     --muted-foreground: 340 15% 65%;
+
+    --category-history: 217 91% 60%;
+    --category-culture: 271 81% 56%;
+    --category-people: 142 71% 45%;
+    --category-nature: 159 61% 44%;
+    --category-gastronomy: 24 95% 53%;
+    --category-architecture: 38 92% 50%;
 
     --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 100%;
