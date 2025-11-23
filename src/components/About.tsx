@@ -1,13 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { MapPin, Users, Calendar, Heart } from "lucide-react";
+import { Users, Calendar, Heart } from "lucide-react";
 
 const stats = [
-  {
-    icon: MapPin,
-    value: "25 km²",
-    label: "Površina",
-    color: "text-primary",
-  },
   {
     icon: Users,
     value: "1,200",
@@ -42,7 +36,7 @@ export const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
             {stats.map((stat, index) => {
               const Icon = stat.icon;
               return (
