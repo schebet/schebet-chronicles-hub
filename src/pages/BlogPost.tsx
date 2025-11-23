@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
+import { Comments } from "@/components/Comments";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -269,7 +270,12 @@ const BlogPost = () => {
             style={{ animationDelay: "0.1s" }}
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
+        </article>
 
+        {/* Comments Section */}
+        <Comments postId={id!} />
+
+        <article className="container mx-auto px-4 max-w-4xl">
           {relatedPosts.length > 0 && (
             <div className="mt-16 pt-8 border-t border-border">
               <h2 className="text-3xl font-bold mb-8 text-gradient-primary">Srodni članci</h2>
