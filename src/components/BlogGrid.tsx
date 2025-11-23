@@ -4,75 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Calendar, User, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-
-const getCategoryColor = (category: string) => {
-  const colors: Record<string, string> = {
-    "Istorija": "bg-category-history/10 text-category-history border-category-history/20",
-    "Kultura": "bg-category-culture/10 text-category-culture border-category-culture/20",
-    "Ljudi": "bg-category-people/10 text-category-people border-category-people/20",
-    "Priroda": "bg-category-nature/10 text-category-nature border-category-nature/20",
-    "Gastronomija": "bg-category-gastronomy/10 text-category-gastronomy border-category-gastronomy/20",
-    "Arhitektura": "bg-category-architecture/10 text-category-architecture border-category-architecture/20",
-  };
-  return colors[category] || "bg-primary/10 text-primary border-primary/20";
-};
-
-const blogPosts = [
-  {
-    id: 1,
-    title: "Istorija sela kroz vekove",
-    excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
-    author: "Marko Petrović",
-    date: "15. januar 2025",
-    category: "Istorija",
-    imageUrl: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?w=800&q=80",
-  },
-  {
-    id: 2,
-    title: "Tradicionalne svečanosti",
-    excerpt: "Naše selo čuva jedinstvene tradicije i običaje. Saznajte više o godišnjim proslavama i festivalima...",
-    author: "Ana Jovanović",
-    date: "10. januar 2025",
-    category: "Kultura",
-    imageUrl: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&q=80",
-  },
-  {
-    id: 3,
-    title: "Ljudi koji grade zajednicu",
-    excerpt: "Upoznajte ljude koji čine srce našeg sela. Priče o pojedincima koji doprinose zajednici...",
-    author: "Stefan Nikolić",
-    date: "5. januar 2025",
-    category: "Ljudi",
-    imageUrl: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=800&q=80",
-  },
-  {
-    id: 4,
-    title: "Prirodne lepote okoline",
-    excerpt: "Šebet je okružen prelepi prirodom. Istražite šume, reke i planine koje nas okružuju...",
-    author: "Jelena Đorđević",
-    date: "1. januar 2025",
-    category: "Priroda",
-    imageUrl: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=800&q=80",
-  },
-  {
-    id: 5,
-    title: "Gastronomska baština",
-    excerpt: "Tradicionalna seoska kuhinja i recepti koji se prenose generacijama. Ukusi detinjstva...",
-    author: "Milica Todorović",
-    date: "28. decembar 2024",
-    category: "Gastronomija",
-    imageUrl: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&q=80",
-  },
-  {
-    id: 6,
-    title: "Arhitektonsko nasleđe",
-    excerpt: "Stare kuće, crkve i mostovi koji svedoče o prošlosti. Očuvanje arhitektonskog nasleđa...",
-    author: "Nikola Stanković",
-    date: "20. decembar 2024",
-    category: "Arhitektura",
-    imageUrl: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?w=800&q=80",
-  },
-];
+import { blogPosts, getCategoryColor } from "@/data/blogPosts";
 
 export const BlogGrid = ({ selectedCategory }: { selectedCategory?: string }) => {
   const filteredPosts = selectedCategory && selectedCategory !== "Sve" 
