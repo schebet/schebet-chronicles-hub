@@ -4,7 +4,7 @@ import { Users, Calendar, Heart } from "lucide-react";
 const stats = [
   {
     icon: Users,
-    value: "1,200",
+    value: "20",
     label: "Stanovnika",
     color: "text-secondary",
   },
