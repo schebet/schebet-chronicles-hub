@@ -15,7 +15,7 @@ export const BlogGrid = ({ selectedCategory }: { selectedCategory?: string }) =>
     <section id="blog" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-primary">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-back-to-top">
             {selectedCategory && selectedCategory !== "Sve" ? `${selectedCategory} priče` : "Najnovije priče"}
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
