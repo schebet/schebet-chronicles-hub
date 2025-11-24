@@ -1,30 +1,23 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Calendar, Heart } from "lucide-react";
-
-const stats = [
-  {
-    icon: Users,
-    value: "20",
-    label: "Stanovnika",
-    color: "text-secondary",
-  },
-  {
-    icon: Calendar,
-    value: "1450",
-    label: "Godina osnivanja",
-    color: "text-accent",
-  },
-  {
-    icon: Heart,
-    value: "∞",
-    label: "Ljubav prema selu",
-    color: "text-primary",
-  },
-];
-
+const stats = [{
+  icon: Users,
+  value: "20",
+  label: "Stanovnika",
+  color: "text-secondary"
+}, {
+  icon: Calendar,
+  value: "1450",
+  label: "Godina osnivanja",
+  color: "text-accent"
+}, {
+  icon: Heart,
+  value: "∞",
+  label: "Ljubav prema selu",
+  color: "text-primary"
+}];
 export const About = () => {
-  return (
-    <section id="about" className="py-20 px-4 bg-muted/30">
+  return <section id="about" className="py-20 px-4 bg-muted/30">
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 animate-fade-in-up">
@@ -38,13 +31,10 @@ export const About = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
             {stats.map((stat, index) => {
-              const Icon = stat.icon;
-              return (
-                <Card
-                  key={index}
-                  className="text-center card-hover bg-gradient-card border-border/50"
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
+            const Icon = stat.icon;
+            return <Card key={index} className="text-center card-hover bg-gradient-card border-border/50" style={{
+              animationDelay: `${index * 0.1}s`
+            }}>
                   <CardContent className="pt-6">
                     <Icon className={`w-8 h-8 mx-auto mb-3 ${stat.color}`} />
                     <div className={`text-3xl font-bold mb-1 ${stat.color}`}>
@@ -52,9 +42,8 @@ export const About = () => {
                     </div>
                     <div className="text-sm text-muted-foreground">{stat.label}</div>
                   </CardContent>
-                </Card>
-              );
-            })}
+                </Card>;
+          })}
           </div>
 
           <Card className="bg-gradient-card border-border/50 card-hover">
@@ -66,10 +55,7 @@ export const About = () => {
                 tradiciju i kulturu ovog kraja.
               </p>
               <p className="text-lg leading-relaxed">
-                Smештeno u preleпoj prirodi, okruženo zelenim brdima i čistim
-                rekama, Šebet pruža mir i spokojstvo daleko od gradske vreve.
-                Naši stanovnici su poznati po gostoprimstvu, vrednoći i ljubavi
-                prema svojoj zemlji.
+                Smešteno u prelepoj prirodi, okruženo zelenim brdima i čistim potocima, Šebet pruža mir i spokojstvo daleko od gradske vreve. Naši stanovnici su poznati po gostoprimstvu, vrednoći i ljubavi prema svojoj zemlji.
               </p>
               <p className="text-lg leading-relaxed">
                 Danas, Šebet je zajednica koja spaja tradiciju i modernost,
@@ -80,6 +66,5 @@ export const About = () => {
           </Card>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
