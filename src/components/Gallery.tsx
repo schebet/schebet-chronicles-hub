@@ -29,7 +29,7 @@ export const Gallery = () => {
     <section id="gallery" className="py-20 px-4">
       <div className="container mx-auto">
         <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-secondary">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-back-to-top">
             Galerija sela
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">

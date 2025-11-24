@@ -28,7 +28,7 @@ export const About = () => {
       <div className="container mx-auto">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 animate-fade-in-up">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-gradient-primary">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4 text-back-to-top">
               O selu Šebet
             </h2>
             <p className="text-xl text-muted-foreground">
