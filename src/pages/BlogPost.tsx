@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
-import { Comments } from "@/components/Comments";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -127,8 +127,6 @@ const BlogPost = () => {
           />
         </article>
 
-        {/* Comments Section */}
-        <Comments postId={id!} />
 
         <article className="container mx-auto px-4 max-w-4xl">
           {relatedPosts.length > 0 && (
