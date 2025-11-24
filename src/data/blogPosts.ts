@@ -14,7 +14,7 @@ export const blogPosts: BlogPost[] = [
     id: 1,
     title: "Istorija sela kroz vekove",
     excerpt: "Otkrijte bogatu istoriju sela Šebet, od prvih naseljenika do danas. Priče koje oblikuju našu zajednicu...",
-    author: "Marko Petrović",
+    author: "Neško - Škone",
     date: "15. januar 2025",
     category: "Istorija",
     imageUrl: "https://images.unsplash.com/photo-1577495508326-19a1b3cf65b7?w=1200&q=80",
