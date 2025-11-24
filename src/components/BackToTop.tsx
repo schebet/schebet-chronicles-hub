@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowUp } from "lucide-react";
+import { ChevronUp } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const BackToTop = () => {
@@ -33,11 +33,11 @@ export const BackToTop = () => {
   return (
     <Button
       onClick={scrollToTop}
-      className="fixed bottom-8 right-8 z-50 rounded-full w-12 h-12 p-0 shadow-glow animate-fade-in-up"
+      className="fixed bottom-8 right-8 z-50 rounded-md w-12 h-12 p-0 shadow-glow animate-fade-in-up bg-back-to-top hover:bg-back-to-top/90"
       size="icon"
       aria-label="Nazad na vrh"
     >
-      <ArrowUp className="w-5 h-5" />
+      <ChevronUp className="w-6 h-6 text-white" />
     </Button>
   );
 };
