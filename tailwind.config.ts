@@ -63,6 +63,7 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        "back-to-top": "hsl(var(--back-to-top))",
         category: {
           history: "hsl(var(--category-history))",
           culture: "hsl(var(--category-culture))",
