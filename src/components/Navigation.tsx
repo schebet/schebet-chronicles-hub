@@ -40,7 +40,7 @@ export const Navigation = ({ selectedCategory, onCategoryChange }: {
             <div className="flex items-center gap-4 ml-4 border-l border-border pl-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
                  className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5" fill="currentColor" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
                  className="text-muted-foreground hover:text-primary transition-colors">
@@ -94,7 +94,7 @@ export const Navigation = ({ selectedCategory, onCategoryChange }: {
             <div className="flex items-center gap-4 pt-4 border-t border-border">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
                  className="text-muted-foreground hover:text-primary transition-colors">
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-5 h-5" fill="currentColor" />
               </a>
               <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
                  className="text-muted-foreground hover:text-primary transition-colors">
