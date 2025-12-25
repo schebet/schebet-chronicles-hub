@@ -1,4 +1,5 @@
 import { useParams, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { BackToTop } from "@/components/BackToTop";
@@ -53,6 +54,19 @@ const BlogPost = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>{post.title} | Selo Šebet</title>
+        <meta name="description" content={post.excerpt} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.excerpt} />
+        <meta property="og:image" content={post.imageUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="Selo Šebet" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={post.title} />
+        <meta name="twitter:description" content={post.excerpt} />
+        <meta name="twitter:image" content={post.imageUrl} />
+      </Helmet>
       <Navigation />
       <main className="flex-1">
         <article className="container mx-auto px-4 py-12 max-w-4xl">
